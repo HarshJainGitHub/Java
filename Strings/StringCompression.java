@@ -13,10 +13,10 @@ public class StringCompression {
 
   private static String compression(String str) {
     String s = Character.toString(str.charAt(0));
-    for(int i =1; i < str.length();i++) {
+    for (int i = 1; i < str.length(); i++) {
       char curr = str.charAt(i);
-      char prev = str.charAt(i-1);
-      if(curr != prev) {
+      char prev = str.charAt(i - 1);
+      if (curr != prev) {
         s += curr;
       }
     }
@@ -27,21 +27,20 @@ public class StringCompression {
     String s = Character.toString(str.charAt(0));
     int count = 1;
 
-    for(int i=1; i < str.length();i++) {
+    for (int i = 1; i < str.length(); i++) {
       char curr = str.charAt(i);
-      char prev = str.charAt(i-1);
-      if(curr == prev) {
-        count ++;
-      }
-      else {
-        if(count > 1) {
+      char prev = str.charAt(i - 1);
+      if (curr == prev) {
+        count++;
+      } else {
+        if (count > 1) {
           s += count;
           count = 1;
         }
         s += curr;
       }
     }
-    if(count > 1) {
+    if (count > 1) {
       s += count;
       count = 1;
     }
